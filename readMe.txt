@@ -1,6 +1,5 @@
-
 Instructions on download
-
+------------------------
 1. Ignore the top 3 files
 2. Download Visual Studio Code
 3. Right click the files and open with Visual Studio Code
