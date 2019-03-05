@@ -1,6 +1,6 @@
 Instructions on download
 ------------------------
-1. Ignore the top 3 files
+1. Ignore the top 3 files and copy the rest of them and place them in a file called "HCI"
 2. Download Visual Studio Code
 3. Right click the files and open with Visual Studio Code
 4. Click on the extension Tab (located on the left, last button)
