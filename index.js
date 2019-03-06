@@ -1,27 +1,18 @@
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-    
-    if (document.getElementById("email_field").value != ""){
-      alert("Hello");
-    }
-    document.getElementById("user_div").style.display = "block";
-    document.getElementById("login_div").style.display = "none";
+firebase.auth().signInAnonymously().catch(function(error){
+var errorCode = error.Code;
+var errorMessage = error.message;
 
-    var user = firebase.auth().currentUser;
+});
 
-    if(user != null){
+firebase.auth().onAuthStateChanged(function(user){
+if (user){
+  var isAnonymous = user.isAnonymous;
+  var uid = user.uid;
+  showpost();
+} else {
 
-      
-    }
+}
 
-  } else {
-    // No user is signed in.
-
-    document.getElementById("user_div").style.display = "none";
-    document.getElementById("login_div").style.display = "block";
-
-  }
 });
 
 function postpost(){
@@ -34,31 +25,46 @@ function postpost(){
     PostTitle: title,
     Question: question
     }
-
-    document.getElementById("post-title").value = ""
-    document.getElementById("post-question").value = ""
     
-    document.getElementById("question-title").innerHTML = title;
-    document.getElementById("question").innerHTML = question;
-
-    ref.push(data)
+     ref.push(data)
+     showpost();
 }
 
-function login(){
-
-  const btnLogin = document.getElementById('btnLogin')
-  const btnLogout = document.getElementById('btnLogout')
-  
-  firebase.auth().signInAnonymously();
-
-
-  
+function showpost(){
+  var data = {
+    PostTitle: title,
+    Question: question
+    }
+    var counter = 0;
+    var t = 't';
+       var q = 'q';
+    console.log(title)
+    var title = document.getElementsByClassName("post");
+    counter = title.length-1;
+    var query = firebase.database().ref("Posts").limitToLast(6);
+    query.once("value").then(function(snapshot){
+    snapshot.forEach(function(childSnapshot){
+      
+       var key = childSnapshot.key;
+      
+       //console.log(key);
+       var childData = childSnapshot.val();
+      var currentT = '';
+      var currentQ = '';
+      currentT = currentT.concat(t, counter);
+      currentQ = currentQ.concat(q, counter);
+      console.log(currentQ)
+      document.getElementById(currentT).innerHTML= String(childData.PostTitle);
+      document.getElementById(currentQ).innerHTML = String(childData.Question);
+      counter--
+       if (counter < 0){return true;}
+       //console.log(childData);
+    });
+    
+    });
 }
 
-function Example(){
-  
-}
 
-function logout(){
-  firebase.auth().signOut();
-}
+
+
+

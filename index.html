@@ -1,34 +1,69 @@
 <html>
 <head>
-  <title>Firebase Login</title>
+  <style>
+  .post{
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+  
+  }
+  </style>
+  <title>HealthCorner</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div id="login_div" class="main-div">
-    <h3>Firebase Web login Example</h3>
-    <input type="email" placeholder="Email..." id="email_field" />
-    <input type="password" placeholder="Password..." id="password_field" />
-
-    <button id="btnLogin", onclick="login()">Login to Account</button>
-  </div>
-
-  <div id="user_div" class="loggedin-div">
+  
+<div align="center">
+  
     <h1>Welcome</h1>
     <h4>Create Post</h4>
     
 
       <input id="post-title" type="text" placeholder="Post Title">
       <input id="post-question" type="text" placeholder="Post Question">
+      <button id="btnPost", onclick="postpost()">Post</button>
+
       <h4>All Posts </h4>
 
       <h4 id="question-title", onclick="Example()"></h4>
       <p id="question"></p>
-    <button id="btnPost", onclick="postpost()">Post</button>
-    <button id="btnLogout", onclick="logout()">Logout</button>
     
-  </div>
+</div>
+  
+<div class = "post">
+ <h3 id = "t0">POST TITLE</h3>
+ <h4 id = "q0">POST QUESTION</h4>
+
+</div>
+
+<div class = "post">
+    <h3 id = "t1">POST TITLE</h3>
+    <h4 id = "q1">POST QUESTION</h4>
+   
+   </div>
+   <div class = "post">
+      <h3 id = "t2">POST TITLE</h3>
+      <h4 id = "q2">POST QUESTION</h4>
+     
+     </div>
+     <div class = "post">
+        <h3 id = "t3">POST TITLE</h3>
+        <h4 id = "q3">POST QUESTION</h4>
+       
+       </div>
+       <div class = "post">
+          <h3 id = "t4">POST TITLE</h3>
+          <h4 id = "q4">POST QUESTION</h4>
+         
+         </div>
+         <div class = "post">
+            <h3 id = "t5">POST TITLE</h3>
+            <h4 id = "q5">POST QUESTION</h4>
+           
+           </div>
 
 
 
