@@ -56,6 +56,7 @@ function GeneratePost(t, q, c)
 }
 //This pulls the last x posts from the database and generates a list of posts 
 //Firebase cannot sort in descending order, unfortunately.
+//Maybe a timestamp attribute would make sorting by latest post easier
 function showposts(x){
   
     counter = x-1;
