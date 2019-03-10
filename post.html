@@ -1,0 +1,44 @@
+<html>
+
+    <head>
+            <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+            <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <style>
+
+     .post{
+        background-color: rgb(154, 245, 142);
+        border-radius: 100px;
+        color: rgb(0, 0, 0);
+        margin: 50px;
+        padding: 20px;
+        text-align: left;
+        text-indent: 50px;
+    }
+
+    .topbar{
+        background-color: rgb(154, 245, 142);
+        color: rgb(0, 0, 0);
+        margin: 50px;
+        padding: 20px;
+        text-align: left;
+        text-indent: 50px;
+    }
+
+    </style>
+
+    <body>
+        <title id = "postTitle"></title>
+        <div style="text-align:center", class="topbar">
+    
+            <h1>Welcome</h1>
+            <h4>Create Post</h4>
+            
+            <input id="post-title" type="text" placeholder="Post Title">
+            <input id="post-question" type="text" placeholder="Post Question">
+            <button id="btnPost", onclick="postpost()">Post</button>
+            
+        </div>
+    </body>
+</html>

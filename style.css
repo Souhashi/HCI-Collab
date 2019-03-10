@@ -128,3 +128,12 @@ input, button {
   border: 1px solid #5d8ffc;
   cursor: pointer;
 }
+
+.linkButtonStyle{
+    background-color: rgb(154, 245, 142);
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
