@@ -44,19 +44,24 @@ function GeneratePost(t, q, c)
        var posttitle = document.createTextNode(t);
        heading3.appendChild(posttitle);
        heading3.id = TID;
-       heading3.href = 'question.html?selected='+TID;
-       localStorage.setItem(TID, t);
+       heading3.href = 'question.html?selected='+TID+QID;
+       
        //heading3.CDATA_SECTION_NODE = 'questionarea';
        newPost.appendChild(heading3);
        var heading4 = document.createElement('h4');
-       var question = document.createTextNode(q);
+       var question = document.createTextNode(q.substring(0, 10)+'...');
        heading4.appendChild(question);
        heading4.id = QID;
-       localStorage.setItem(QID, q);
+       heading3.onclick = StorageonClick(TID, QID, t, q);
        newPost.appendChild(heading4);
        document.getElementById('postArea').appendChild(newPost);
        console.log(TID);
        console.log(QID);
+}
+
+function StorageonClick(id, id2, item, item2){
+  sessionStorage.setItem(id, item);
+  sessionStorage.setItem(id2, item2);
 }
 //This pulls the last x posts from the database and generates a list of posts 
 //Firebase cannot sort in descending order, unfortunately.
@@ -86,8 +91,9 @@ function RefreshPost(t,q, c){
   TID = TID.concat(tid, String(c));
   var d = document.getElementById(TID);
   d.innerHTML = t;
-  d.href = 'question.html?selected='+t;
-  document.getElementById(QID).innerHTML = q;
+  d.href = 'question.html?selected='+TID+QID;
+  d.onclick = StorageonClick(TID, QID, t, q);
+  document.getElementById(QID).innerHTML = q.substring(0,10)+'...';
   console.log(QID);
   console.log(TID);
 }

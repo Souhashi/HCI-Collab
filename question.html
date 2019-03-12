@@ -1,7 +1,76 @@
 <html>
 
 <head>
-    <title id = "questiontitle"></title>
-    <h1>HI</h1>
+    <style>
+        .topbar{
+    background-color: rgb(154, 245, 142);
+    color: rgb(0, 0, 0);
+    margin: 50px;
+  padding: 20px;
+  text-align: left;
+  text-indent: 50px;
+  }
+  .qsection{
+  background-color: rgb(154, 245, 142);
+  border-radius: 100px;
+  color: rgb(0, 0, 0);
+  margin: 50px;
+  padding: 50px;
+  text-align: justify;
+  
+  }
+  .replysection{
+    background-color: rgb(154, 245, 142);
+  position:-webkit-sticky;
+  position: sticky;
+  bottom:20;
+  color: rgb(0, 0, 0);
+  margin: 20px;
+  padding: 20px;
+  text-align: justify;
+  }
+  .replypost{
+   
+  background-color: rgb(197, 253, 190);
+  border-radius: 100px;
+  color: rgb(0, 0, 0);
+  margin: 20px 20px 20px 200px;
+  padding: 50px;
+  text-align: justify;
+  }
+ 
+
+    </style>
+    <title id = "pagetitle"></title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body>
+        <header>
+                <div class = "topbar">
+                 <h1>HealthCorner</h1>
+                </div>
+        </header>
+   
+    <div class = "qsection">
+
+            <h1 id ="questiontitle"></h1>
+            <p id = "qbody"></p>
+    </div>
+
+    <div id = "anssection">
+
+    </div>
+
+    <div class = "replysection">
+        <h4>Join the discussion!</h4>
+        <textarea id = "replybox" rows = "5" cols = "100"></textarea>
+        <button id = "replyBtn" onclick=createReply()>Reply</button>
+    </div>
+       
+
+</body>
+</script>
+<script src="question.js"></script>
 </html>
