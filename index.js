@@ -25,10 +25,43 @@ function postpost(){
     PostTitle: title,
     Question: question
     }
-    
-     ref.push(data)
-     RefreshPosts(8);
+    ref.push(data)
+    let numOfPosts = firebase.database().ref("Posts").limitToLast(1);
+    sessionStorage.setItem("a1", title);
+    sessionStorage.setItem("a2", question);
+    window.location.href = "question.html?selected=" + "a1a2";
+  //RefreshPosts(8);
 }
+
+function GenerateNewPost(t, q, c)
+{
+  var qid = "q";
+  var tid = "t";
+  var QID = "";
+  var TID ="";
+  QID = QID.concat(qid, String(c));
+  TID = TID.concat(tid, String(c));
+       var newPost = document.createElement('div');
+       newPost.className = 'post';
+       var heading3 = document.createElement('a');
+       var posttitle = document.createTextNode(t);
+       heading3.appendChild(posttitle);
+       heading3.id = TID;
+       heading3.href = 'question.html?selected='+TID+QID;
+       
+       //heading3.CDATA_SECTION_NODE = 'questionarea';
+       newPost.appendChild(heading3);
+       var heading4 = document.createElement('h4');
+       var question = document.createTextNode(q.substring(0, 100)+'...');
+       heading4.appendChild(question);
+       heading4.id = QID;
+       heading3.onclick = StorageonClick(TID, QID, t, q);
+       newPost.appendChild(heading4);
+       //document.getElementById('postArea').appendChild(newPost);
+       console.log(TID);
+       console.log(QID);
+}
+
 //This function generates a div class with class post
 function GeneratePost(t, q, c)
 {
@@ -49,7 +82,7 @@ function GeneratePost(t, q, c)
        //heading3.CDATA_SECTION_NODE = 'questionarea';
        newPost.appendChild(heading3);
        var heading4 = document.createElement('h4');
-       var question = document.createTextNode(q.substring(0, 10)+'...');
+       var question = document.createTextNode(q.substring(0, 100)+'...');
        heading4.appendChild(question);
        heading4.id = QID;
        heading3.onclick = StorageonClick(TID, QID, t, q);
