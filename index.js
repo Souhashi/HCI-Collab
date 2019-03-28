@@ -8,12 +8,32 @@ firebase.auth().onAuthStateChanged(function(user){
 if (user){
   var isAnonymous = user.isAnonymous;
   var uid = user.uid;
-  showposts(8);
+  
 } else {
 
 }
 
 });
+numposts = 5;
+function ValidateandShow(ref){
+  ref.once("value", function(snapshot) {
+    counter1 = snapshot.numChildren();
+    if(counter1 < numposts){showposts(counter1);}
+    else {showposts(numposts);}
+    
+  })
+
+}
+
+function setUp(){
+ 
+  var database = firebase.database();
+  
+  var ref = database.ref('Posts');
+  ValidateandShow(ref);
+  
+}
+
 
 function postpost(){
   var database = firebase.database();

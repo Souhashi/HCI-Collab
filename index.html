@@ -2,21 +2,22 @@
 <head>
   <style>
   .post{
-    background-color: rgb(154, 245, 142);
-    border-radius: 100px;
-    color: rgb(0, 0, 0);
-    margin: 50px;
-    padding: 20px;
-    text-align: left;
-    text-indent: 50px;
+  background-color: rgb(154, 245, 142);
+  border-radius: 100px;
+  color: rgb(0, 0, 0);
+  margin: 50px;
+  padding: 20px;
+  text-align: left;
+  text-indent: 50px;
+  
   }
   .topbar{
     background-color: rgb(154, 245, 142);
     color: rgb(0, 0, 0);
-    margin: 50px;
-    padding: 20px;
-    text-align: left;
-    text-indent: 50px;
+    
+  padding: 20px;
+  text-align: left;
+  text-indent: 50px;
   }
 
   </style>
@@ -32,36 +33,16 @@
  <h1>HealthCorner</h1>
 </div>
   </header>
-<div style="text-align:center">
+<div align ="center">
   
     <h1>Welcome</h1>
-    <h4>Create Post</h4>
+    
     
 
-      <input id="post-title" type="text" placeholder="Post Title">
-      <input id="post-question" type="text" placeholder="Post Question">
-      <button id="btnPost", onclick="postpost()">Post</button>
-
-      <a id="linkNewPost", href="post.html", class="linkButtonStyle"> New Post</a>
+    <a id="linkNewPost", href="post.html", class="linkButtonStyle"> New Post</a>
 
       <h4>All Posts </h4>
-
-      <h4 id="question-title"></h4>
-      <p id="question"></p>
-    
-</div>
-  
-
-
-
-<div id = "postArea">
-
-
-</div>
-
-</section> 
-
-  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
   <script>
     // Initialize Firebase
     var config = {
@@ -75,7 +56,28 @@
     firebase.initializeApp(config);
     
   </script>
-  <script src="index.js"></script>
 
+  
+  <script src="index.js"></script>
+  <script>
+   setUp();
+  </script>
+
+      
+    
+</div>
+  
+
+
+
+<div id = "postArea">
+
+
+</div>
+
+</section> 
+
+  
+ 
 </body>
 </html>

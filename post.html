@@ -7,7 +7,7 @@
 
     <style>
 
-     .post{
+.post{
         background-color: rgb(154, 245, 142);
         border-radius: 100px;
         color: rgb(0, 0, 0);
@@ -20,14 +20,28 @@
     .topbar{
         background-color: rgb(154, 245, 142);
         color: rgb(0, 0, 0);
-        margin: 50px;
+       
         padding: 20px;
         text-align: left;
         text-indent: 50px;
     }
+    .postArea{
+      padding: 50px;
+    }
+    a:link {
+  text-decoration: none;
+}
+
+    
 
     </style>
-
+ <header>
+    <div class = "topbar">
+      <h1><a href="index.html">HealthCorner</a>
+        
+    </div>
+    
+      </header>
     <body>
         
         <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
@@ -46,9 +60,9 @@
           <script src="index.js"></script>
 
         <title id = "postTitle"></title>
-        <div style="text-align:center", class="topbar">
+        <div style="text-align:left", class="postArea">
     
-            <h1>Welcome</h1>
+           
             <h4>Create Post</h4>
             
             <input id="post-title" type="text" placeholder="Post Title">

@@ -8,7 +8,7 @@ firebase.auth().signInAnonymously().catch(function(error){
     if (user){
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
-      showposts(8);
+     // showposts(8);
     } else {
     
     }
